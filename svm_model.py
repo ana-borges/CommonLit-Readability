@@ -15,19 +15,19 @@ X = train_df.drop(drop_feat, axis=1)
 y = train_df['target']
 
 
-svr_kernels = ['linear', 'poly', 'rbf', 'sigmoid']
-gamma = np.arange(0.1, 1.1, 0.3)
-#epsilon = gamma.copy()
+# svr_kernels = ['linear', 'poly', 'rbf', 'sigmoid']
+# gamma = np.arange(0.1, 1.1, 0.3)
+# epsilon = gamma.copy()
 
-accuracies = [(ker, gam,\
-             SVR(kernel=ker, C=100, gamma=gam, epsilon=.1).fit(X, y).predict(X))\
-            for ker in svr_kernels for gam in gamma]
+# models = [(ker,\
+#              SVR(kernel=ker, C=100, gamma=.1, epsilon=.1).fit(X, y).predict(X))\
+#             for ker in svr_kernels]
 
-foo = [(ker, gam, eps) for ker in svr_kernels for gam in gamma for eps in epsilon]
+# foo = [(ker, gam, eps) for ker in svr_kernels for gam in gamma for eps in epsilon]
 
-accuracies = [mean_squared_error(machine.fit(X)) for X in machines]
+# accuracies = [mean_squared_error(model.predictc(X)) for X in models]
 
-# Fit regression model
+Fit regression model
 svr_rbf = SVR(kernel='rbf', C=100, gamma=0.1, epsilon=.1)
 svr_lin = SVR(kernel='linear', C=100, gamma='auto')
 svr_poly = SVR(kernel='poly', C=100, gamma=0.1, degree=3, epsilon=.1, coef0=1)
