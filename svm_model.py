@@ -15,32 +15,15 @@ X = train_df.drop(drop_feat, axis=1)
 y = train_df['target']
 
 
-# svr_kernels = ['linear', 'poly', 'rbf', 'sigmoid']
-# gamma = np.arange(0.1, 1.1, 0.3)
-# epsilon = gamma.copy()
+svr_kernels = ['linear', 'poly', 'rbf', 'sigmoid']
 
-# models = [(ker,\
-#              SVR(kernel=ker, C=100, gamma=.1, epsilon=.1).fit(X, y).predict(X))\
-#             for ker in svr_kernels]
+svr_pred =\
+    [SVR(kernel=ker, C=100, gamma=0.1, degree=3, epsilon=.1, coef0=1).fit(X, y).predict(X)\
+     for ker in svr_kernels]
 
-# foo = [(ker, gam, eps) for ker in svr_kernels for gam in gamma for eps in epsilon]
+svr_acc = [mean_squared_error(y, y_pred) for y_pred in svr_pred]
 
-# accuracies = [mean_squared_error(model.predictc(X)) for X in models]
-
-Fit regression model
-svr_rbf = SVR(kernel='rbf', C=100, gamma=0.1, epsilon=.1)
-svr_lin = SVR(kernel='linear', C=100, gamma='auto')
-svr_poly = SVR(kernel='poly', C=100, gamma=0.1, degree=3, epsilon=.1, coef0=1)
-
-lw = 2
-
-svrs = [svr_rbf, svr_lin, svr_poly]
-kernel_label = ['RBF', 'Linear', 'Polynomial']
+for ker, acc in list(zip(svr_kernels, svr_acc)):
+    print(ker + ": " + str(acc))
 
 
-results = [model.fit(X, y).predict(X) for model in svrs]
-
-accuracies = [mean_squared_error(y, y_pred) for y_pred in results]
-
-for name, acc in list(zip(kernel_label, accuracies)):
-    print(name + ": " + str(acc))
