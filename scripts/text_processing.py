@@ -80,7 +80,6 @@ def freq(term : str, document : str) -> int :
 def add_common_words(words : list, pdf : pd.DataFrame, col : str) -> None :
     '''Adds a new column for each `word` in `words` counting the number of
        occurrencies of the word in each text'''
-    print(len(words))
     for word in words :
         pdf.loc[:, word] = \
             pdf[col].apply(lambda doc : freq(word, doc))
@@ -155,4 +154,4 @@ if __name__ == '__main__':
     scaler = MinMaxScaler()
     df[word_variables] = scaler.fit_transform(df[word_variables])
 
-    df.to_csv('data/outputs/' + new_file ,index=False)
+    df.to_csv('../data/outputs/' + new_file ,index=False)
