@@ -7,14 +7,8 @@ import argparse
 import pandas as pd
 import numpy as np
 
-# import seaborn as sns
-# import matplotlib.pyplot as plt
-# from wordcloud import WordCloud
-
-# from collections import Counter
 import string
 import re
-# from statistics import mean
 
 import nltk
 from nltk.corpus import stopwords
@@ -138,30 +132,27 @@ if __name__ == '__main__':
 
     # Read the data
     df = pd.read_csv(file_to_process, encoding = 'latin-1')
-    print("read data")
 
     # Process the text
     clean_text(df, to_store)
-    print("[+] cleaned text")
+
 
     # Stemmatize the text
     stemmatize_text(df, to_store)
-    print("[+] stemattized test")
 
-
+    # Create a descending-sorted list with the tf_idf score of each word
     all_words = tf_idf_counter(df, to_store)
-    #print(all_words)
-    print("[+] Got all words")
-    word_variables = all_words[100: 200]
-    print("got word variables")
+
+    # We set the word variables to be the words from the 100th to the 600th
+    # since we've seen that it is the optimal range in which they are not
+    # too common nor too uncommon
+    word_variables = all_words[100: 600]
 
     # Add common words
     add_common_words(word_variables, df, to_store)
-    print("added common words")
 
     # Normalize the occurrencies' values
     scaler = MinMaxScaler()
     df[word_variables] = scaler.fit_transform(df[word_variables])
-    print("done")
 
     df.to_csv('data/outputs/' + new_file ,index=False)
