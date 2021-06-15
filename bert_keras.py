@@ -19,6 +19,7 @@ tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 
 
 # For every sentence...
+encoded_dict=list(range(len(train_df.excerpt)))
 for (text, i) in zip(train_df.excerpt, range(len(train_df.excerpt))):
     # `encode_plus` will:
     #   (1) Tokenize the sentence.

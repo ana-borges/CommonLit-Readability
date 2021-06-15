@@ -1,6 +1,6 @@
-# import os
-# os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID";
-# os.environ["CUDA_VISIBLE_DEVICES"]="0";
+import os
+os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID";
+os.environ["CUDA_VISIBLE_DEVICES"]="0";
 
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error
@@ -41,7 +41,7 @@ bert = text.text_regression_model('bert', train_data=trn, preproc=preproc)
 bert_learner = ktrain.get_learner(bert, train_data=trn, val_data=val, batch_size=6)
 
 # Find the learning rate
-bert_learner.lr_find() #gives error for some reason
+bert_learner.lr_find()
 
 bert_learner.lr_plot() #if bert_learner.lr_find() doesn't work this won't either
 
