@@ -30,9 +30,9 @@ On average, each excerpt has been reviewed 22 times.
 
 The data treatment we have carried out involves the following steps:
 
-* Make the words lower case.
+* Make the words lower case
 * Remove stop words
-* Tokenize words: do this to words
+* Tokenize words
 * Remove punctuation
 * Stemmatize
 
@@ -131,12 +131,14 @@ The GLM was the worst performing model, showing a huge deviance, Chi squared... 
 
 ## Conclusions
 
-The best performing model so far has been the NuSVR with the `rfb` (Radial Basis Function) kernel, with a MSE of 0.7071887919114409.
+For the initial phase we have decided to use the aftermentioned models, which are models somewhat used by the community. This models have proven to be fast to train, and achieve admirable results, especially taking into consideration the simplicity of some of them.
 
-Although it is not a horrible result, there's obviously much room for improvement. Which is why we have recently started to implement BERT models.
+The best performing model so far havs been the NuSVR with the `rbf` (Radial Basis Function) kernel, with a MSE of 0.7071887919114409.
+
+The results look promising, and we still believe there is room for improvement given additional resources. Hence we have started implementing BERT-derived models, which are proven in the literature for this scope of work.
 
 ## Future work
 
-There's still more than a month for the competition to end, and so far we have testes what we could consider "traditional" models.
+There's still more than a month for the competition to end, and so far we have tested what we could consider "traditional" models.
 
 For the future of this project we are going to continue with BERT-models. [BERT](https://arxiv.org/abs/1810.04805?source=post_page) (Bidirectional Encoder Representations from Transformers) is a language representation model introduced in 2018. Since then, a family of BERT-like models like RoBERTa (Robustly Optimized BERT Pre-training Approach), ALBERT (A Little BERT)... We have started to fiddle with such models, and they will be the future models in which we'll work.
