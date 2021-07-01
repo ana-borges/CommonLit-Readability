@@ -18,9 +18,7 @@ From these variables, the only ones containing useful information are `excerpt`,
 
 Let's see what a random `excerpt` is like:
 
-`
-When the young people returned to the ballroom, it presented a decidedly changed appearance. Instead of an interior scene, it was a winter landscape.\nThe floor was covered with snow-white canvas, not laid on smoothly, but rumpled over bumps and hillocks, like a real snow field. The numerous palms and evergreens that had decorated the room, were powdered with flour and strewn with tufts of cotton, like snow. Also diamond dust had been lightly sprinkled on them, and glittering crystal icicles hung from the branches.\nAt each end of the room, on the wall, hung a beautiful bear-skin rug.\nThese rugs were for prizes, one for the girls and one for the boys. And this was the game.\nThe girls were gathered at one end of the room and the boys at the other, and one end was called the North Pole, and the other the South Pole. Each player was given a small flag which they were to plant on reaching the Pole.\nThis would have been an easy matter, but each traveller was obliged to wear snowshoes.
-`
+> When the young people returned to the ballroom, it presented a decidedly changed appearance. Instead of an interior scene, it was a winter landscape.\nThe floor was covered with snow-white canvas, not laid on smoothly, but rumpled over bumps and hillocks, like a real snow field. The numerous palms and evergreens that had decorated the room, were powdered with flour and strewn with tufts of cotton, like snow. Also diamond dust had been lightly sprinkled on them, and glittering crystal icicles hung from the branches.\nAt each end of the room, on the wall, hung a beautiful bear-skin rug.\nThese rugs were for prizes, one for the girls and one for the boys. And this was the game.\nThe girls were gathered at one end of the room and the boys at the other, and one end was called the North Pole, and the other the South Pole. Each player was given a small flag which they were to plant on reaching the Pole.\nThis would have been an easy matter, but each traveller was obliged to wear snowshoes.
 
 The `target` is the reading difficulty. It is the result of a [Bradley-Terry](https://en.wikipedia.org/wiki/Bradley-Terry_model) analysis of more than 111,000 pairwise comparisons between excerpts. Teachers spanning grades 3-12 (a majority teaching between grades 6−10) served as the raters for these comparisons.
 
@@ -40,9 +38,7 @@ The data treatment we have carried out involves the following steps:
 
 After going through this process, an expert such as the one shown before looks like this:
 
-`
-young peopl return ballroom present decid chang appear instead interior scene winter landscap floor cover snowwhit canva laid smooth rumpl bump hillock like real snow field numer palm evergreen decor room powder flour strewn tuft cotton like snow also diamond dust light sprinkl them glitter crystal icicl hung branch end room wall hung beauti bearskin rug rug prize one girl one boy game girl gather one end room boy other one end call north pole south pole player given small flag plant reach pole would easi matter travel oblig wear snowsho'
-`
+> young peopl return ballroom present decid chang appear instead interior scene winter landscap floor cover snowwhit canva laid smooth rumpl bump hillock like real snow field numer palm evergreen decor room powder flour strewn tuft cotton like snow also diamond dust light sprinkl them glitter crystal icicl hung branch end room wall hung beauti bearskin rug rug prize one girl one boy game girl gather one end room boy other one end call north pole south pole player given small flag plant reach pole would easi matter travel oblig wear snowsho'
 
 
 ## Text measurement
@@ -88,7 +84,7 @@ To see how they correlate with each other, `target` and `standard_error` we refe
 
 ## Model evaluation
 
-In this phase we have started with model selection. So far wehave tried Support Vector Machines, XGBoost regressor, Random Forest, GLM.
+In this phase we have started with model selection. So far we have tried Support Vector Machines, XGBoost regressor, Random Forest, GLM.
 
 ### Support Vector Machines
 
@@ -108,7 +104,7 @@ The mean squared error for the kernels is
 
 We tried the `linear`, `poly` and `rbf` kernels.
 
-The mean squared errror for the kernel is
+The mean squared error for the kernel is
 
 * `linear` MSE: 0.4328520467681354
 * `poly` MSE: 0.705854310605194
@@ -116,9 +112,9 @@ The mean squared errror for the kernel is
 
 ### XGBoost regressor
 
-For the XGBoost regressor the implementation was quite straightforward, yielding the following mse:
+For the XGBoost regressor the implementation was quite straightforward, yielding the following MSE:
 
-* mse: 0.6471750555617857
+* MSE: 0.6471750555617857
 
 ### Random forest
 
@@ -130,12 +126,12 @@ For the random forest we got the following measures:
 
 ### GLM
 
-The GLM was the worst perfrorming model, showing a huge deviance, Chi squared... Altogether it was just a fun try.
+The GLM was the worst performing model, showing a huge deviance, Chi squared... Altogether it was just a fun try.
 
 
 ## Conclusions
 
-The best performing model so far havs been the NuSVR with the `rfb` (Radial Basis Function) kernel, with a MSE of 0.7071887919114409.
+The best performing model so far has been the NuSVR with the `rfb` (Radial Basis Function) kernel, with a MSE of 0.7071887919114409.
 
 Although it is not a horrible result, there's obviously much room for improvement. Which is why we have recently started to implement BERT models.
 
