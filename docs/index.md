@@ -32,9 +32,9 @@ On average, each excerpt has been reviewed 22 times.
 
 The data treatment we have carried out involves the following steps:
 
-* Make the words lower case.
+* Make the words lower case
 * Remove stop words
-* Tokenize words: do this to words
+* Tokenize words
 * Remove punctuation
 * Stemmatize
 
