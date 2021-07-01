@@ -18,9 +18,9 @@ From these variables, the only ones containing useful information are `excerpt`,
 
 Let's see what a random `excerpt` is like:
 
-```markdown
-'When the young people returned to the ballroom, it presented a decidedly changed appearance. Instead of an interior scene, it was a winter landscape.\nThe floor was covered with snow-white canvas, not laid on smoothly, but rumpled over bumps and hillocks, like a real snow field. The numerous palms and evergreens that had decorated the room, were powdered with flour and strewn with tufts of cotton, like snow. Also diamond dust had been lightly sprinkled on them, and glittering crystal icicles hung from the branches.\nAt each end of the room, on the wall, hung a beautiful bear-skin rug.\nThese rugs were for prizes, one for the girls and one for the boys. And this was the game.\nThe girls were gathered at one end of the room and the boys at the other, and one end was called the North Pole, and the other the South Pole. Each player was given a small flag which they were to plant on reaching the Pole.\nThis would have been an easy matter, but each traveller was obliged to wear snowshoes.'
-```
+`
+When the young people returned to the ballroom, it presented a decidedly changed appearance. Instead of an interior scene, it was a winter landscape.\nThe floor was covered with snow-white canvas, not laid on smoothly, but rumpled over bumps and hillocks, like a real snow field. The numerous palms and evergreens that had decorated the room, were powdered with flour and strewn with tufts of cotton, like snow. Also diamond dust had been lightly sprinkled on them, and glittering crystal icicles hung from the branches.\nAt each end of the room, on the wall, hung a beautiful bear-skin rug.\nThese rugs were for prizes, one for the girls and one for the boys. And this was the game.\nThe girls were gathered at one end of the room and the boys at the other, and one end was called the North Pole, and the other the South Pole. Each player was given a small flag which they were to plant on reaching the Pole.\nThis would have been an easy matter, but each traveller was obliged to wear snowshoes.
+`
 
 The `target` is the reading difficulty. It is the result of a [Bradley-Terry](https://en.wikipedia.org/wiki/Bradley-Terry_model) analysis of more than 111,000 pairwise comparisons between excerpts. Teachers spanning grades 3-12 (a majority teaching between grades 6−10) served as the raters for these comparisons.
 
@@ -40,9 +40,9 @@ The data treatment we have carried out involves the following steps:
 
 After going through this process, an expert such as the one shown before looks like this:
 
-```markdown
-'young peopl return ballroom present decid chang appear instead interior scene winter landscap floor cover snowwhit canva laid smooth rumpl bump hillock like real snow field numer palm evergreen decor room powder flour strewn tuft cotton like snow also diamond dust light sprinkl them glitter crystal icicl hung branch end room wall hung beauti bearskin rug rug prize one girl one boy game girl gather one end room boy other one end call north pole south pole player given small flag plant reach pole would easi matter travel oblig wear snowsho'
-```
+`
+young peopl return ballroom present decid chang appear instead interior scene winter landscap floor cover snowwhit canva laid smooth rumpl bump hillock like real snow field numer palm evergreen decor room powder flour strewn tuft cotton like snow also diamond dust light sprinkl them glitter crystal icicl hung branch end room wall hung beauti bearskin rug rug prize one girl one boy game girl gather one end room boy other one end call north pole south pole player given small flag plant reach pole would easi matter travel oblig wear snowsho'
+`
 
 
 ## Text measurement
@@ -106,7 +106,7 @@ The mean squared error for the kernels is
 
 #### NuSVR
 
-We tried the `linear`, `poly` AND `rbf` kernels.
+We tried the `linear`, `poly` and `rbf` kernels.
 
 The mean squared errror for the kernel is
 
